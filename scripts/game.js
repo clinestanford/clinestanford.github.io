@@ -49,7 +49,7 @@ MyGame.main = (function (objects, input, renderer, graphics){
 
 		background = objects.texture({
 			size: size,
-			src: 'assets/background.png'
+			src: 'assets/background3.png'
 		});
 
 		board = objects.maze({
