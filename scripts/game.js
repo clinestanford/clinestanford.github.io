@@ -31,13 +31,12 @@ MyGame.main = (function (objects, input, renderer, graphics){
 			return 15;
 		}else if(document.getElementById("twentyxtwenty").checked){
 			return 20;
-		}else if(document.getElementById("thirtyxthirty").checked){
-			return 30;
+		}else if(document.getElementById("fourtyxfourty").checked){
+			return 40;
 		} else {
 			return 5;
 		}
 	}
-
 
 	function initialize(){
 		start = false;
@@ -75,7 +74,6 @@ MyGame.main = (function (objects, input, renderer, graphics){
 		gameLoop();
 	}
 
-
 	function fillHighScores(){
 		highscores.sort(function(a,b){
 			return b - a;
@@ -104,6 +102,10 @@ MyGame.main = (function (objects, input, renderer, graphics){
 	}
 
 	function toggleShowPath() {
+		if(size > 20) {
+			alert("Trying to cheat on the big one?")
+			return;
+		}
 		if(showPath) {
 			showPath = false;
 		} else {
@@ -112,6 +114,10 @@ MyGame.main = (function (objects, input, renderer, graphics){
 	}
 
 	function toggleShowHint() {
+		if(size > 20) {
+			alert("Trying to cheat on the big one?")
+			return;
+		}
 		if(showHint) {
 			showHint = false;
 		} else {
@@ -171,8 +177,6 @@ MyGame.main = (function (objects, input, renderer, graphics){
 	keyboard.register('q', endLoop);
 	keyboard.register('p', toggleShowPath);
 	keyboard.register('h', toggleShowHint);
-
-	
 
 	startButton.onclick = initialize;
 
